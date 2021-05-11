@@ -1,0 +1,56 @@
+{
+  "name": "api-architecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server",
+  "scripts": {
+    "start": "node server.js",
+    "start:debug": "node --inspect server.js",
+    "lint": "eslint -c .eslintrc.json src/**/*.js src/**/*.mjs",
+    "format": "prettier src/**/*.js --write",
+    "jest:unit": "jest --config=jest.config.js --testPathPattern=src/modules",
+    "jest:integration": "env-cmd -f .env.test jest --config=jest.config.js --testPathPattern=src/tests"
+  },
+  "keywords": [],
+  "author": "MentorMate",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^26.0.14",
+    "@types/sequelize": "^4.28.9",
+    "app-root-path": "^3.0.0",
+    "awilix": "^4.3.3",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-joi-validation": "^4.0.4-beta.0",
+    "express-jwt": "^6.0.0",
+    "express-openid-connect": "^2.3.0",
+    "jest": "^26.6.3",
+    "joi": "^17.2.1",
+    "jwks-rsa": "^2.0.2",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.1",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "js-beautify": "^1.8.9",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.1.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
